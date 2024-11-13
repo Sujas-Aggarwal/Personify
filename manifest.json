@@ -1,0 +1,18 @@
+{
+    "version":"0.0.1",
+    "name":"Personal Theme",
+    "description":"A personal theme for websites",
+    "permissions":["activeTab","scripting"],
+    "manifest_version":3,
+    "icons":{
+        "16":"icon.png",
+        "48":"icon.png",
+        "128":"icon.png"
+    },
+    "content_scripts":[
+        {
+            "matches":["https://www.youtube.com/*"],
+            "css":["themes/youtube-theme-personify.css"]
+        }
+    ]
+}

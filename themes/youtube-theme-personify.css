@@ -1,0 +1,35 @@
+ytd-app[darker-dark-theme] {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://r4.wallpaperflare.com/wallpaper/285/471/731/night-cyberpunk-futuristic-city-artwork-wallpaper-18561dd890a0fc28903c118ea8f294ba.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#container.style-scope.ytd-masthead {
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+ytd-mini-guide-renderer.style-scope.ytd-app[role="navigation"][mini-guide-visible],
+#guide-content.style-scope.ytd-app, #contentContainer.style-scope.tp-yt-app-drawer {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+}
+
+#content.style-scope.ytd-rich-item-renderer {
+    background-color: transparent;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    padding: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
+}
+
+#content.style-scope.ytd-rich-item-renderer:hover {
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+#chips.style-scope.ytd-feed-filter-chip-bar-renderer {
+    background-color: rgba(255, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+}

@@ -12,7 +12,11 @@
     "content_scripts":[
         {
             "matches":["https://www.youtube.com/*"],
-            "css":["themes/youtube-theme-personify.css"]
+            "css":["css/youtube-theme-personify.css"]
+        },
+        {
+            "matches":["https://www.youtube.com/watch?v=*"],
+            "js":["js/youtube-functions-personify.js"]
         }
     ]
 }

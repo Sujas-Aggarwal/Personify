@@ -4,6 +4,8 @@ console.log(rightMenu);
 const speedButton = document.createElement("button");
 speedButton.innerHTML = "1x";
 speedButton.className = "ytp-button";
+speedButton.title = "Adjust Video Speed";
+speedButton.ariaKeyShortcuts = "s";
 speedButton.style.cssText = `
   background: none;
   border: none;
@@ -15,7 +17,9 @@ speedButton.style.cssText = `
   outline: none;
   display: flex;
   align-items: center;
+  font-weight: bold;
 `;
+
 rightMenu.prepend(speedButton);
 const miniplayerButton = document.querySelector(".ytp-miniplayer-button");
 if (miniplayerButton) {
@@ -36,9 +40,16 @@ if (
 }
 function speedControl() {
   currentSpeed =
-    speedVariants[speedVariants.indexOf(currentSpeed) + 1] || speedVariants[0];
+    speedVariants[
+      (speedVariants.indexOf(currentSpeed) + 1) % speedVariants.length
+    ] || speedVariants[0];
   videoEle.playbackRate = currentSpeed;
   localStorage.setItem("yt-video-speed", currentSpeed.toString());
   speedButton.innerHTML = `${currentSpeed}x`;
 }
+document.addEventListener("keydown", (e) => {
+  if (e.key === "s") {
+    speedControl();
+  }
+});
 speedButton.addEventListener("click", speedControl);

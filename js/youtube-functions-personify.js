@@ -35,7 +35,7 @@ if (
   speedVariants.includes(parseInt(localStorage.getItem("yt-video-speed")))
 ) {
   currentSpeed = parseInt(localStorage.getItem("yt-video-speed"));
-  speedButton.innerHTML = `${currentSpeed}x`;
+  speedButton.innerHTML = `${currentSpeed.toString()}x`;
   videoEle.playbackRate = currentSpeed;
 }
 function speedControl() {
@@ -45,7 +45,7 @@ function speedControl() {
     ] || speedVariants[0];
   videoEle.playbackRate = currentSpeed;
   localStorage.setItem("yt-video-speed", currentSpeed.toString());
-  speedButton.innerHTML = `${currentSpeed}x`;
+  speedButton.innerHTML = `${currentSpeed.toString()}x`;
 }
 document.addEventListener("keydown", (e) => {
   if (e.key === "s") {
